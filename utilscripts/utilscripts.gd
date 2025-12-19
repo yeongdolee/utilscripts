@@ -47,5 +47,14 @@ func Instantiate(scene: PackedScene, pos: Variant = null, parent: Node = null) -
 			instance.global_position = pos
 	return instance
 
+func Destroy(node: Variant, delay: float = 0.0):
+	if not is_instance_valid(node) or not node is Node:
+		return
+	
+	if delay <= 0:
+		node.queue_free()
+	else:
+		get_tree().create_timer(delay).timeout.connect(node.queue_free)
+
 func _ready():
 	randomize()
