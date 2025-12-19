@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://poftf8c4hj2o"]
+
+[ext_resource type="Script" uid="uid://cdr8u4qju812r" path="res://examples/global_signal_test/Receiver.gd" id="1_xm3qb"]
+[ext_resource type="Script" uid="uid://db04kla5al66h" path="res://examples/global_signal_test/Sender.gd" id="2_mcipo"]
+[ext_resource type="Script" uid="uid://cs308gg8yng8l" path="res://examples/global_signal_test/Receiver2.gd" id="3_mcipo"]
+
+[node name="Main" type="Node"]
+
+[node name="Receiver" type="Node" parent="."]
+script = ExtResource("1_xm3qb")
+
+[node name="Sender" type="Node" parent="."]
+script = ExtResource("2_mcipo")
+
+[node name="Receiver2" type="Node" parent="."]
+script = ExtResource("3_mcipo")
