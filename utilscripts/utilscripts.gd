@@ -38,13 +38,26 @@ func Invoke(callable: Callable, delay: Variant):
 		return
 	get_tree().create_timer(f_delay).timeout.connect(callable, CONNECT_ONE_SHOT)
 
-func Instantiate(scene: PackedScene, pos: Variant = null, parent: Node = null) -> Node:
+func Instantiate(scene: PackedScene, position: Variant = null, rotation: Variant = null, parent: Node = null) -> Node:
 	var instance = scene.instantiate()
+	
 	var target_parent = parent if parent != null else get_tree().current_scene
 	target_parent.add_child(instance)
-	if pos != null:
+	
+	if position != null:
 		if instance is Node2D or instance is Control or instance is Node3D:
-			instance.global_position = pos
+			instance.global_position = position
+			
+	
+	if rotation != null:
+		if instance is Node2D:
+			instance.global_rotation = rotation
+		elif instance is Node3D:
+			if rotation is Vector3:
+				instance.global_rotation_degrees = rotation
+			else:
+				instance.global_rotation = rotation
+				
 	return instance
 
 func Destroy(node: Variant, delay: float = 0.0):
