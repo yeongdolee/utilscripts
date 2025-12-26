@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0b6bwnrkxjv"]
+
+[ext_resource type="Script" uid="uid://dxpy5jyh61box" path="res://player/NoGravity/playerMovement2D.gd" id="1_drcob"]
+[ext_resource type="Texture2D" uid="uid://mv2otdq43o1u" path="res://test/player/icon.svg" id="2_drcob"]
+
+[node name="PlayerMovement2D" type="CharacterBody2D"]
+script = ExtResource("1_drcob")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_drcob")
