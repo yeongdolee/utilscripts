@@ -52,6 +52,7 @@ download 디렉터리 내부의 utilscripts.zip(최신버전)을 다운로드해
 `Project Settings > Globals > Autoload`
 
 이름: **US**
+
 등록 경로 : `utilscripts/utilscripts/utilscripts.gd`
 
 등록 후에는 스크립트에서 US.함수, US.클래스.메서드 형식으로 사용할 수 있습니다.
@@ -232,4 +233,8 @@ US.GetMouseWorldPos()
 
 ---
 
-# END
+# License
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+이 프로젝트는 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko) 라이선스를 따릅니다.
