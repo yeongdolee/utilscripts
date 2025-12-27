@@ -114,5 +114,30 @@ func LookAtSmooth(node: Node2D, target_pos: Vector2, weight: float):
 func CallGroup(group_name: String, method_name: String, args: Array = []):
 	get_tree().call_group(group_name, method_name, args)
 
+## Shakes the registered MainCamera.
+## @intensity: How strong the shake is. @duration: How long it lasts.
+func ShakeCamera(intensity: float, duration: float):
+	if MainCamera == null: return
+	var original_pos = MainCamera.offset
+	var tween = create_tween()
+	
+	for i in range(int(duration * 60)):
+		var shake_offset = Vector2(Random.RangeF(-1, 1), Random.RangeF(-1, 1)) * intensity
+		tween.tween_property(MainCamera, "offset", shake_offset, 0.01)
+	tween.tween_property(MainCamera, "offset", original_pos, 0.1)
+
+## Returns an array of nodes in a specific group within a certain range.
+func GetNearby(center: Vector2, radius: float, group_name: String) -> Array:
+	var result = []
+	var targets = get_tree().get_nodes_in_group(group_name)
+	for t in targets:
+		if t is Node2D and center.distance_to(t.global_position) <= radius:
+			result.append(t)
+	return result
+
+## Returns the current mouse position in world coordinates.
+func GetMouseWorldPos() -> Vector2:
+	return get_tree().current_scene.get_global_mouse_position()
+
 func _ready():
 	randomize()
