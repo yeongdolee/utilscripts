@@ -32,8 +32,8 @@ title: UtilScript (US) Documentation
 
 ## UtilScripts 다운로드
 
-https://codeberg.org/yeongdolee/utilscripts 로 접속해
-download 디렉터리 내부의 utilscripts.zip(최신버전)을 다운로드해
+https://codeberg.org/yeongdolee/utilscripts/src/branch/master/downloads
+위 링크로 접속해 utilscripts.zip(최신버전)을 다운로드해
 프로젝트 내부에 압축을 풀거나 utilscripts-vN.N.N.zip을 다운로드해
 프로젝트 내부에 이름을 변경해 압축을 풀어주세요.
 
