@@ -250,6 +250,12 @@ CharacterBody3D에 사용할 수 있는 스크립트로, 플레이어를 마우�
 
 ---
 
+## FollowCamera3D
+
+Camera3D에 부착할 수 있는 스크립트로, 일정한 구도에서 플레이어를 Offset만큼 멀리서 따라가게 만듭니다.
+
+---
+
 # License
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
