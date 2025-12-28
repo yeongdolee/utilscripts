@@ -204,7 +204,7 @@ US.CallGroup("Enemy", "TakeDamage", [10])
 ## ShakeCamera
 
 전역 값인 MainCamera 기준으로 Tween 기반의 흔들림을 생성합니다.
-a는 강도(float), b는 지속 시간(float)이다.
+a는 강도(float), b는 지속 시간(float)입니다.
 
 ```gdscript
 US.ShakeCamera(5.0, 0.3)
@@ -215,7 +215,7 @@ US.ShakeCamera(5.0, 0.3)
 ## GetNearby
 
 좌표 a 기준으로 b만큼의 범위 내에서 그룹 c의 노드들을 Array 타입으로 반환합니다.
-좌표 a는 Vector2, 범위 b는 float, 그룹 c는 String으로 그룹명을 입력한다.
+좌표 a는 Vector2, 범위 b는 float, 그룹 c는 String으로 그룹명을 입력해야 합니다.
 
 ```gdscript
 US.GetNearby(center, radius, "Enemy")
