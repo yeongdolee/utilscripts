@@ -32,18 +32,9 @@ title: UtilScript (US) Documentation
 
 ## UtilScripts 다운로드
 
-https://codeberg.org/yeongdolee/utilscripts 로 접속해
-download 디렉터리 내부의 utilscripts.zip(최신버전)을 다운로드해
-프로젝트 내부에 압축을 풀거나 utilscripts-vN.N.N.zip을 다운로드해
-프로젝트 내부에 이름을 변경해 압축을 풀어주세요.
-
-### 파일 예시
-
-- utilscripts.zip(최신버전)
-- utilscripts-v1.1.1(v1.1.1 버전)
-- utilscripts-beta-v1.1.1(v1.1.1 베타 버전)
-
-<!-- (파일은 최신 릴리즈 이전 5개까지의 파일만 보관합니다.) -->
+https://codeberg.org/yeongdolee/utilscripts/archive/master.zip
+위 링크로 접속해 전체 저장소 코드를 ZIP 형식으로
+다운로드해 프로젝트 내부에 압축을 풀어주세요.
 
 ---
 
@@ -230,6 +221,32 @@ US.GetNearby(center, radius, "Enemy")
 ```gdscript
 US.GetMouseWorldPos()
 ```
+
+---
+
+# Player Scripts
+
+플레이어의 움직임 등에 관한 스크립트입니다.
+
+---
+
+## PlayerMovement3D / PlayerMovement2D
+
+CharacterBody2D/3D에 사용할 수 있는 스크립트로, 기본적인 WASD 이동을 지원합니다.
+
+---
+
+## NoGravity PlayerMovement3D / PlayerMovement2D
+
+PlayerMovement 스크립트와 같은 기능을 하지만 중력이 반영되지 않습니다.
+
+---
+
+## PlayerMoveHere3D
+
+CharacterBody3D에 사용할 수 있는 스크립트로, 플레이어를 마우스를 우클릭하는 지점으로 부드럽게 이동시킵니다.
+이때 우클릭으로 이동할 수 있는 지점은 `CollisionObject3D > Collision > Layer`가 2여야 합니다.
+우클릭 시 이펙트를 표시시킬 수도 있습니다. 이펙트 씬을 비워두면 이펙트가 재생되지 않는다.
 
 ---
 
