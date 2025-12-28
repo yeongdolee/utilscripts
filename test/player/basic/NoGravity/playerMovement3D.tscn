@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsf8sx2crbcxi"]
+[gd_scene load_steps=6 format=3 uid="uid://ca6blq40aoa7q"]
 
-[ext_resource type="Script" uid="uid://c4o2xfsvu5rlo" path="res://player/playerMovement3D.gd" id="1_un0xk"]
+[ext_resource type="Script" uid="uid://m3335y32fax4" path="res://player/basic/NoGravity/playerMovement3D.gd" id="1_v7pp6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_un0xk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -18,7 +18,7 @@ glow_enabled = true
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_un0xk"]
 
 [node name="PlayerMovement3d" type="CharacterBody3D"]
-script = ExtResource("1_un0xk")
+script = ExtResource("1_v7pp6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lsnll")

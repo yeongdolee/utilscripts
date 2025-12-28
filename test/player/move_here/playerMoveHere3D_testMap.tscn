@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6dbi7g57n5iq"]
+
+[ext_resource type="PackedScene" uid="uid://cwj0o3tp631aq" path="res://test/player/move_here/playerMoveHere3D.tscn" id="1_clba1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_clba1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_n8aa4"]
+sky_material = SubResource("ProceduralSkyMaterial_clba1")
+
+[sub_resource type="Environment" id="Environment_rk661"]
+background_mode = 2
+sky = SubResource("Sky_n8aa4")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3dp2l"]
+size = Vector3(30, 0.1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dp2l"]
+size = Vector3(30, 0.1, 30)
+
+[node name="PlayerMoveHere3dTestMap" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rk661")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Map" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
+mesh = SubResource("BoxMesh_3dp2l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map"]
+shape = SubResource("BoxShape3D_3dp2l")
+
+[node name="PlayerMoveHere3d" parent="." instance=ExtResource("1_clba1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3663867, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.80195296, 0.5973872, 0, -0.5973872, 0.80195296, 0, 4.5183067, 12.29855)
