@@ -250,6 +250,13 @@ CharacterBody3D에 사용할 수 있는 스크립트로, 플레이어를 마우�
 
 ---
 
+## PlayerMoveHere3D Gravity
+
+PlayerMoveHere3D와 같은 역할을 하지만 중력이 적용됩니다.
+다만, 사전 설정이 필요합니다. 플레이어(CharaterBody3D)의 `CollisionObject3D > Collision > Mask`가 1, 2 모두 설정되어있어야 하고, `CollisionObject3D > Collision > Layer`가 1로 설정되어있어야 합니다.
+
+---
+
 ## FollowCamera3D
 
 Camera3D에 부착할 수 있는 스크립트로, 일정한 구도에서 플레이어를 Offset만큼 멀리서 따라가게 만듭니다.

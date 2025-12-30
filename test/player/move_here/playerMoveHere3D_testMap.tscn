@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6dbi7g57n5iq"]
+[gd_scene load_steps=9 format=3 uid="uid://c6dbi7g57n5iq"]
 
 [ext_resource type="PackedScene" uid="uid://cwj0o3tp631aq" path="res://test/player/move_here/playerMoveHere3D.tscn" id="1_clba1"]
-[ext_resource type="Script" uid="uid://bo65togfbyjsu" path="res://test/player/camera/FollowCamera3D.gd" id="2_n8aa4"]
+[ext_resource type="Script" uid="uid://bo65togfbyjsu" path="res://player/camera/FollowCamera3D.gd" id="2_n8aa4"]
+[ext_resource type="Script" uid="uid://d2q4gq6qfwjll" path="res://player/move_here/playerMoveHere3D_Gravity.gd" id="2_rk661"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_clba1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,10 +42,15 @@ mesh = SubResource("BoxMesh_3dp2l")
 shape = SubResource("BoxShape3D_3dp2l")
 
 [node name="PlayerMoveHere3d" parent="." instance=ExtResource("1_clba1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3663867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.960907, 0)
+script = ExtResource("2_rk661")
+use_smoothing = true
+apply_gravity = true
+gravity_multiplier = 2.0
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.80195296, 0.5973872, 0, -0.5973872, 0.80195296, 0, 4.5183067, 12.29855)
 script = ExtResource("2_n8aa4")
 target = NodePath("../PlayerMoveHere3d")
 offset = Vector3(0, 5, 7)
+use_smoothing = false

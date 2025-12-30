@@ -7,6 +7,8 @@ extends Camera3D
 @export var offset: Vector3 = Vector3(0, 15, 12) 
 
 @export_group("Movement Settings")
+## If enabled, the camera follows the target smoothly using interpolation.
+@export var use_smoothing: bool = true
 ## Smoothness of the camera movement (Higher is faster, lower is smoother)
 @export var follow_speed: float = 5.0
 ## Whether the camera should instantly snap to the target on start
@@ -14,10 +16,7 @@ extends Camera3D
 
 func _ready():
 	if target and snap_on_ready:
-		# Set initial position immediately to avoid long travel on start
-		global_position = target.global_position + offset
-		# Ensure the camera looks at the target
-		look_at(target.global_position)
+		_snap_to_target()
 
 func _physics_process(delta):
 	if not target:
@@ -26,9 +25,13 @@ func _physics_process(delta):
 	# Calculate the target position based on the offset
 	var desired_position = target.global_position + offset
 	
-	# Smoothly interpolate the camera position
-	# Using lerp prevents jittering and provides a polished feel
-	global_position = global_position.lerp(desired_position, follow_speed * delta)
-	
-	# Optional: Maintain the initial look_at rotation if the camera needs to stay locked
-	# Most LoL-style cameras use a fixed rotation set in the editor.
+	if use_smoothing:
+		# Smoothly interpolate to the desired position
+		global_position = global_position.lerp(desired_position, follow_speed * delta)
+	else:
+		# Instantly snap to the desired position every frame
+		global_position = desired_position
+
+func _snap_to_target():
+	global_position = target.global_position + offset
+	look_at(target.global_position)
