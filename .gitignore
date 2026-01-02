@@ -6,3 +6,5 @@ project.godot
 utilscripts.gd.uid
 .editorconfig
 .vscode/
+
+addons/*

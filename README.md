@@ -224,6 +224,17 @@ US.GetMouseWorldPos()
 
 ---
 
+## Wait
+
+a초만큼 대기합니다. a는 float 타입입니다.
+이 함수는 await과 함께 사용해야 합니다.
+
+```gdscript
+await US.Wait(3.0)
+```
+
+---
+
 # Player Scripts
 
 플레이어의 움직임 등에 관한 스크립트입니다.
@@ -247,6 +258,13 @@ PlayerMovement 스크립트와 같은 기능을 하지만 중력이 반영되지
 CharacterBody3D에 사용할 수 있는 스크립트로, 플레이어를 마우스를 우클릭하는 지점으로 부드럽게 이동시킵니다.
 이때 우클릭으로 이동할 수 있는 지점은 `CollisionObject3D > Collision > Layer`가 2여야 합니다.
 우클릭 시 이펙트를 표시시킬 수도 있습니다. 이펙트 씬을 비워두면 이펙트가 재생되지 않는다.
+
+---
+
+## PlayerMoveHere3D Gravity
+
+PlayerMoveHere3D와 같은 역할을 하지만 중력이 적용됩니다.
+다만, 사전 설정이 필요합니다. 플레이어(CharaterBody3D)의 `CollisionObject3D > Collision > Mask`가 1, 2 모두 설정되어있어야 하고, `CollisionObject3D > Collision > Layer`가 1로 설정되어있어야 합니다.
 
 ---
 
