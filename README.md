@@ -224,6 +224,17 @@ US.GetMouseWorldPos()
 
 ---
 
+## Wait
+
+a초만큼 대기합니다. a는 float 타입입니다.
+이 함수는 await과 함께 사용해야 합니다.
+
+```gdscript
+await US.Wait(3.0)
+```
+
+---
+
 # Player Scripts
 
 플레이어의 움직임 등에 관한 스크립트입니다.

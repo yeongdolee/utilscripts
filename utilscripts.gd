@@ -139,5 +139,9 @@ func GetNearby(center: Vector2, radius: float, group_name: String) -> Array:
 func GetMouseWorldPos() -> Vector2:
 	return get_tree().current_scene.get_global_mouse_position()
 
+## Wait for a certain period of time.
+func Wait(seconds: float):
+	return get_tree().create_timer(seconds).timeout
+
 func _ready():
 	randomize()
